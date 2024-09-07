@@ -1,21 +1,17 @@
 import './header.css'
-import { Link, useNavigate } from "react-router-dom";
-import Slider from '../slider/slider.jsx'
+import {Link} from 'react-router-dom'
 const Header = () =>{
     return <>
-    <div className="headerContainer">
-        <div>
-            <img src="logo.png"></img>
-        </div>
-        <div>New cars</div>
-        <div>Used cars</div>
-        <div>Compare</div>
-        <div>Sell</div>
-        <div>Article</div>
-        <div>Sign In</div>
-        <div>EN</div>
-    </div>
-    <Slider></Slider>
+    <Header className="headerContainer">
+        <img src="logo.png"></img>
+        <Link to="/newCars" className="headerList">New cars</Link>
+        <div className="headerList">Used cars</div>
+        <div className="headerList">Compare</div>
+        <div className="headerList">Sell</div>
+        <div className="headerList">Article</div>
+        <div className="headerList">Sign In</div>
+        <div className="headerList">EN</div>
+    </Header>
     </>
 }
 export default Header

@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import car1 from '../../img/imghp.png'
 import car2 from '../../img/car2.png'
 import car3 from '../../img/car4.png'
-const Slider = () => {
+import './imgChange.css'
+const ImgChange = () => {
     const images = [car1, car2, car3];
     const [currentIndex, setCurrentIndex] = useState(0);
     useEffect(() => {
@@ -29,4 +30,4 @@ const Slider = () => {
     </div>
   );
 }
-export default Slider
+export default ImgChange

@@ -1,0 +1,20 @@
+.recommendContainer{
+    padding-top:5%;
+    width:80%;
+    position:relative;
+    left:10%
+}
+.recommendList h3{
+    cursor:pointer;
+    color: #007CC7;
+}
+.recommendList p{
+    cursor:pointer;
+    padding-left:75%;
+    color: #007CC7;
+}
+.recommendList {
+    display:flex;
+    gap:5%;
+    padding-bottom: 3%;
+}

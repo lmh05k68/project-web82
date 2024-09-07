@@ -1,50 +1,33 @@
 import React from "react";
 import "./footer.css";
-// import logo from "../images/logo.png";
-// import { FaFacebook } from "react-icons/fa";
-// import { FaInstagram } from "react-icons/fa";
-// import { FaYoutube } from "react-icons/fa";
-
 function Footer() {
-  return (
-    <div className="Footer">
-      <div className="img">
-        <img src={logo} alt="" />
-      </div>
-      <div className="line"></div>
-      <div className="info-thanh">
-        <div className="contact1">
-          <ul>
-            <li>ABOUT US</li>
-            <li>FAQ</li>
-            <li>CONTACT</li>
-          </ul>
-        </div>
-        <div className="contact1">
-          <ul>
-            <li>CUSTOMER SERVICE</li>
-            <li>info@car.com</li>
-            <li>240-865-3730</li>
-          </ul>
-        </div>
-        <div className="add-social">
-          <ul>
-            <li>3926 Calvin Street,</li>
-            <li>Baltimore, Maryland,</li>
-            <li>21201,</li>
-            <li>United State</li>
-          </ul>
-          <div className="socialIcon">
-            <FaFacebook />
-            <FaInstagram />
-            <FaYoutube />
-          </div>
-        </div>
-      </div>
-      <div className="line"></div>
-      <p className="p-Footer-thanh">2021 Autohunt. All Rights reserved</p>
+  return <>
+  <footer className="footerContainer">
+    <div className="footerLogo">
+      <img src="logo.png"/>
     </div>
-  );
+    <div className="footerLine">.</div>
+    <div className="footerList">
+      <div>
+        <div>ABOUT US</div><br/>
+        <div>FAQ</div><br/>
+        <div>CONTACT</div>
+      </div>
+      <div>
+        <div>CUSTOMER SERVICE</div><br/>
+        <div>info@car.com</div><br/>
+        <div>240-865-3730</div>
+      </div>
+      <div>
+        <div>3926 Calvin Street</div>
+        <div>Baltimore, Maryland,</div>
+        <div>21201,</div>
+        <div>United State</div>
+      </div>
+    </div>
+    <div className="footerLine"><p>2021 Autohunt. All right reserved</p></div>
+  </footer>
+  </>
 }
 
 export default Footer;

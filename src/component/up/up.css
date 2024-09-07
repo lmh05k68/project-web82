@@ -1,0 +1,10 @@
+.up button{
+    background-color: #007CC7;
+    border-radius: 50%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.upIcon{
+    color:white
+}

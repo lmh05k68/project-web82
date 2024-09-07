@@ -1,0 +1,56 @@
+.cardContainer{
+    width:100%;
+    display:flex;
+    justify-content: space-between;
+    padding-bottom:2%;
+    height:100%;
+}
+.card{
+    border: 2px solid #12232E;
+    width:30%;
+}
+.card img{
+    width:90%;
+    padding:5%
+}
+.card h2{
+    padding-left:5%
+}
+.card p{
+    padding-left:5%
+}
+.yearStyle{
+    display:flex;
+    padding-top:3%
+}
+.new {
+    display: flex;
+    justify-content: center;
+    width: 15%;
+    height:35px;
+    color: #007CC7;
+    align-items: center;
+    border-radius: 3px;
+    border: 1px solid #007CC7;
+    position:relative;
+    left:5%
+}
+.cardIcon{
+    display:flex;
+}
+.cardLine{
+    width:90%;
+    background-color:grey;
+    height:2px;
+    position:relative;
+    left:5%;
+    top:2%
+}
+.star{
+    padding-top:5%;
+    padding-left: 5%;
+    display:flex;
+    font-size:16px;
+    align-items: center;
+    padding-bottom: 1%;
+}
