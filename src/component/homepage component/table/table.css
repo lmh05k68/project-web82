@@ -1,0 +1,93 @@
+.filter{
+    display:flex;
+    width:80%;
+    justify-content: center;
+    flex-direction: column;
+    position:relative;
+    left:10%;
+    gap:30px;
+    background-color: #071620;
+}
+.filterList{
+    color:#007CC7;
+    display: flex;
+    justify-content: space-around;
+    padding-top:1%;
+    width:40%;
+    position:relative;
+    left:30%
+}
+.filterList h3{
+    cursor:pointer
+}
+.filterPart2{
+    display:flex;
+    justify-content: space-around;
+    height:50px;
+    padding-bottom: 2%;
+}
+.filterPart1{
+    display:flex;
+    justify-content: space-around;
+}
+.searchBtn{
+    width:10%;
+    border-radius: 10px;
+    position: relative;
+    right:3%;
+    background-color: #007CC7;
+    color: white
+}
+.listLine{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    gap:5px
+}
+.underline{
+    height:2px;
+    background-color: #007CC7;
+    width:100px
+}
+.searchIcon{
+    position: absolute;
+    font-size: 25px;
+    left:4%;
+    top:37%
+}
+.locationIcon{
+    position:absolute;
+    font-size: 25px;
+    bottom:17%;
+    left:4%;
+    z-index: 999;
+}
+.filterPart1 input{
+    background-color: #152836;
+    color: #A9A9A9;
+    border:none;
+    border-radius: 5px;
+    width:40%;
+    padding-left: 5%;
+    
+}
+.filterPart1 select{
+    height: 48px;
+    padding-right: 15%;
+    padding-left: 1%;
+    background-color: #152836;
+    color: #A9A9A9;
+    border-radius: 5px;
+}
+.filterPart2 input{
+    background-color: #152836;
+    color:#A9A9A9;
+    border-radius: 5px;
+    padding-left: 4%;
+    position:relative;
+    left:3%;
+    width:30%
+}
+.active{
+    border:1px solid white
+}

@@ -4,9 +4,9 @@ function Footer() {
   return <>
   <footer className="footerContainer">
     <div className="footerLogo">
-      <img src="logo.png"/>
+      <img src="/logo.png"/>
     </div>
-    <div className="footerLine">.</div>
+    <div className="footerLine"></div>
     <div className="footerList">
       <div>
         <div>ABOUT US</div><br/>

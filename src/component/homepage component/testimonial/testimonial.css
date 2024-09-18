@@ -1,0 +1,24 @@
+.testimonialContainer{
+    padding-top:5%;
+    width:100%
+}
+.testimonialWrapper{
+    display: flex;
+    overflow-x: hidden; /* Cho phép cuộn ngang */
+    white-space: nowrap; /* Ngăn các phần tử xuống dòng */
+    gap: 20px; /* Khoảng cách giữa các testimonial */
+    padding: 2%;
+    position: relative;
+}
+.testimonialCard{
+    background-color: #12232E;
+    width:80%;
+    height:250px;
+    flex: 0 0 auto; /* Giữ nguyên kích thước và không co giãn */
+    scroll-snap-align: start;
+    display:flex
+}
+.testimonialCard img{
+    height:200px;
+    margin:25px
+}

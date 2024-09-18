@@ -1,14 +1,17 @@
 .headerContainer{
-    width:100%;
+    width:80%;
     height:50px;
     position:relative;
     display:flex;
     justify-content: space-around;
     align-items: center;
+    left:10%
 }
 .headerContainer img{
     cursor:pointer
 }
 .headerList{
-    cursor:pointer
+    cursor:pointer;
+    color:white;
+    text-decoration: none;
 }

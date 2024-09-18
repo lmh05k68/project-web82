@@ -1,0 +1,43 @@
+.slider{
+    position:relative;
+    width:100%;
+    overflow:hidden
+}
+.sliderIndicator{
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+}
+.indicator-dot {
+    position: absolute;
+    top: 200px;
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: opacity 0.3s;
+}
+
+.indicator-dot.active {
+    opacity: 1;
+}
+.find{
+    display:flex;
+    flex-direction: column;
+    position:relative;
+    padding-bottom:90%;
+    right:80%
+}
+.find h1{
+    font-size: 40px;
+    padding-bottom: 5%;
+}
+.find p{
+    width:70%;
+    font-size: 18px;
+}

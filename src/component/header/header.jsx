@@ -2,16 +2,16 @@ import './header.css'
 import {Link} from 'react-router-dom'
 const Header = () =>{
     return <>
-    <Header className="headerContainer">
-        <img src="logo.png"></img>
+    <header className="headerContainer">
+        <Link to="/"><img src="/logo.png"></img></Link>
         <Link to="/newCars" className="headerList">New cars</Link>
-        <div className="headerList">Used cars</div>
-        <div className="headerList">Compare</div>
-        <div className="headerList">Sell</div>
+        <Link to="/usedCars" className="headerList">Used cars</Link>
+        <Link to="/cmp" className="headerList">Compare</Link>
+        <Link to="/sell" className="headerList">Sell</Link>
         <div className="headerList">Article</div>
         <div className="headerList">Sign In</div>
         <div className="headerList">EN</div>
-    </Header>
+    </header>
     </>
 }
 export default Header

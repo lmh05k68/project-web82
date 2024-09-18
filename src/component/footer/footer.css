@@ -26,6 +26,7 @@
 .footerLogo{
     display:flex;
     justify-content: center;
+    align-items: center;
 }
 .footerLine p{
     padding-top: 1%;

@@ -1,0 +1,54 @@
+.cardFilter{
+    display:flex;
+    flex-direction: column;
+    width:100%;
+    gap:50px;
+    padding-bottom:5%
+}
+.card1{
+    display:flex;
+    border:3px solid #071620;
+    width:100%;
+}
+.card1 img{
+    margin:2%;
+    width:80%;
+}
+.a{
+    width:100%;
+    padding-top:2%;
+    padding-bottom:2%
+}
+.f{
+    background-color: grey;
+    height:2px;
+    width:95%
+}
+.state{
+    border:1px solid  #007CC7;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width:15%;
+    height:30px;
+    color:#007CC7
+}
+.b{
+    padding-top:3%;
+    padding-bottom:3%
+}
+.c{
+    display:flex;
+    width:90%;
+    justify-content: space-between;
+    padding-bottom:3%
+}
+.d{
+    display:flex;
+}
+.e{
+    display:flex;
+    align-items: center;
+    gap:2%;
+    padding-top:3%
+}

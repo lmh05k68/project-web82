@@ -1,0 +1,276 @@
+.detailBody{
+    width:90%;
+    display:flex;
+    margin-top:5%;
+    margin-left:5%;
+    flex-direction: column;
+}
+.leftColumn{
+    margin-right:5%;
+    width:60%
+}
+.des{
+    margin-bottom:5%
+}
+.des h3{
+    margin-bottom:3%;
+}
+.feature h3{
+    margin-bottom:1%
+}
+.featureContainer{
+    display:flex;
+    flex-wrap: wrap;
+    gap:1%;
+}
+.features{
+    background-color:#152836 ;
+    height:40px;
+    padding-left: 1%;
+    padding-right:1%;
+    display:flex;
+    align-items: center;
+    margin-bottom: 1%;
+}
+.dealer {
+    margin-top: 5%;
+}
+.dealer h3{
+    padding-bottom: 1%;
+}
+.dealerIn4{
+    display:flex;  
+    background-color: #071620;
+    width:95%;
+    height:100px;
+    justify-content: space-around;
+    align-items: center;
+}
+.dealerImg{
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
+    width:30%
+}
+.dealerPhone{
+    display:flex;
+    width:30%;
+    gap:5%;
+    justify-content: center;
+}
+.dealerImg img{
+    width:50px;
+    border-radius: 50%;
+}
+.dealerLine{
+    width:2px;
+    height:60px;
+    background-color: white;
+}
+.detailContact{
+    margin-top: 6%;
+    width:95%
+}
+.contactForm{
+    margin-top: 5%;
+}
+.contactForm button{
+    width:100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+    height:40px;
+    color:white;
+    background-color: #007CC7
+}
+.formChildName{
+    display:flex;
+    flex-direction: column;
+    width:45%;
+}
+.formChildEmail{
+    display:flex;
+    flex-direction: column;
+    width:45%;
+    margin-left:10%
+}
+.formChildPhone{
+    display:flex;
+    flex-direction: column;
+    width:45%
+}
+.formChildSubject{
+    display:flex;
+    flex-direction: column;
+    width:45%;
+    margin-left:10%
+}
+.formChildCmt{
+    display:flex;
+    flex-direction: column;
+}
+.nameEmail{
+    display:flex; 
+    margin-bottom: 3%;
+}
+.nameEmail input{
+    height:40px;
+    background-color: #152836;
+    padding-left: 5%;
+    color:white
+}
+.nameEmail select{
+    height:40px;
+    background-color: #152836;
+    color:white;
+    padding-left: 5%;
+}
+.nameEmail label{
+    margin-bottom: 2%;
+}
+.formChildCmt label{
+    margin-bottom:2%
+}
+.formChildCmt textarea{
+    height:100px;
+    background-color: #152836;
+    color:white;
+    padding-left: 2%;
+    padding-top:2%
+}
+.contactLocation h3{
+    margin-bottom: 3%;
+    margin-top: 10%;
+}
+.contactLocation p{
+    margin-bottom:1%
+}
+.credit{
+    margin-top: 10%;
+    margin-bottom:5%;
+}
+.credit h3{
+    margin-bottom: 2%;
+}
+.priceContainer{
+    background-color:  #071620;
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.priceLeft{
+    display:flex;
+    flex-direction: column;
+    margin-top:1%;
+    margin-bottom:2%;
+    width:40%;
+}
+.priceLeft label{
+    margin-bottom:3%
+}
+.priceRate{
+    display:flex;
+    width:100%;
+    justify-content: space-between;
+    margin-bottom:10%;
+}
+.priceRate input{
+    width:250px;
+    height:40px;
+    background-color: #152836;
+    color:white;
+    padding-left:5%
+}
+.monthDown{
+    display:flex;
+    width:100%;
+    justify-content: space-between;
+}
+.monthDown input{
+    width:250px;
+    height:40px;
+    background-color: #152836;
+    color:white;
+    padding-left:5%
+}
+.monthDown select{
+    width:250px;
+    height:40px;
+    background-color: #152836;
+    color:white;
+    padding-left:5%
+}
+.priceTotal{
+    display:flex;
+    flex-direction: column;
+}
+.monthly{
+    border:1px solid #007CC7;
+    width:50%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height:165px
+}
+.detailLine{
+    display: flex;
+    width:25%;
+    flex-direction: column;
+    align-items: center;
+    gap: 1px;
+}
+.detailLine1{
+    background-color: #007CC7;
+    height:2px;
+    width:100%
+}
+.detailLine2{
+    background-color: #007CC7;
+    height:2px;
+    width:50%
+}
+.rightColumnContainer{
+    width:35%
+}
+.rightColumnPrice{
+    border:1px solid #007CC7;
+    height:40px;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    color:#007CC7;
+    margin-bottom:15%
+}
+.rightColumn{
+    background-color:  #071620;
+    padding:5%
+}
+.rightChild{
+    display:flex;
+    justify-content: space-between;
+    margin-bottom: 2%;
+}
+.rightDetail h3{
+    margin-bottom: 5%;
+}
+.rightDetailLine{
+    width:100%;
+    height:2px;
+    background-color: grey;
+    margin-top: 3%;
+    margin-bottom:10%
+}
+.detailStar{
+    display:flex;
+    justify-content: space-between;
+}
+.detailCompare{
+    width:100%;
+    border:1px solid;
+    height:40px;
+    background-color:#071620 ;
+    color:white;
+    margin-top: 15%;
+}

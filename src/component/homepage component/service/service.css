@@ -1,0 +1,30 @@
+.serviceContainer{
+    width:80%;
+    position:relative;
+    left:10%;
+
+}
+.serviceContainer h2{
+    padding-bottom: 2%;
+    padding-top:5%
+}
+.serviceCard{
+    display:flex;
+    width:100%;
+    justify-content: space-between;
+}
+.serviceChild{
+    border:1px solid #004A77;
+    width:30%;
+    height:100px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor:pointer;
+    color:white;
+    text-decoration: none;
+}
+.serviceIcon{
+    font-size: 35px;
+}

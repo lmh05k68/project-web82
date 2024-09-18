@@ -1,0 +1,25 @@
+.newHeader{
+    background-color: #071620
+}
+.newBody{
+    display:flex;
+    width:90%;
+    padding-right:0
+}
+.newBodyRight{
+    padding-top: 5%;
+}
+.newBodyRightSearch{
+    padding-bottom:5%;
+    display:flex;
+    width:100%;
+    align-items: center;
+}
+.newBodyRightSearch input{
+    position:relative;
+    background-color: #152836;
+    width:100%;
+    height:40px;
+    padding-left:6%;
+    color:white
+}

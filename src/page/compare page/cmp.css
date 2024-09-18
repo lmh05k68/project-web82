@@ -1,0 +1,9 @@
+.cmpCardContainer{
+    width:100%;
+    display:flex;
+    justify-content: space-around;
+}
+.cmpCard{
+    width:30%;
+    border:1px solid
+}

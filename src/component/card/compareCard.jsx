@@ -14,7 +14,7 @@ const CompareCard = () => {
                     <div className="new">
                         <p>{car.state}</p>
                     </div>
-                    <h2 style={{paddingTop:"10px"}}>{car.name}</h2>
+                    <h2 style={{paddingTop:"10px"}} className="carName">{car.name}</h2>
                     <h2 style={{color:"#007CC7",paddingTop:'2%'}}>{car.price}</h2>
                     <p style={{paddingTop:'5%'}}>{car.place}</p>
                     <div className="yearStyle">

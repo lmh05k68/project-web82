@@ -1,0 +1,29 @@
+.scroll{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+.scrollBtn{
+    padding-bottom:5%;
+    padding-top:2%;
+}
+.scrollBtn button{
+    background-color: #152836;
+    height:40px;
+}
+.inBtn{
+    display:flex;
+    justify-content: space-between;
+    width:100%;
+    align-items: center;
+    padding-left: 5%;
+    padding-right:5%;
+    color:white
+}
+.scrollChild input{
+    height:auto
+}
+.scrollChild{
+    padding-left: 10%;
+    padding-bottom: 5%;
+}

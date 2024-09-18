@@ -1,10 +1,18 @@
-.up button{
+.up{
     background-color: #007CC7;
     border-radius: 50%;
     display:flex;
     justify-content: center;
     align-items: center;
+    z-index: 999;
+    width:50px;
+    height:50px;
+    position:fixed;
+    top:50%;
+    opacity:0.75;
+    right:1%
 }
 .upIcon{
-    color:white
+    color:white;
+    font-size: 18px;
 }

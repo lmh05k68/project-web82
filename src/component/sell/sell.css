@@ -1,0 +1,49 @@
+.sell{
+    margin-bottom: 10%;
+    margin-top:5%;
+    width:100%
+}
+.sellForm{
+    position:absolute;
+    width:90%;
+    top:40%;
+    left:5%
+}
+.sellForm h1{
+    margin-bottom:3%
+}
+.namePrice{
+    display:flex;
+    justify-content: space-between;
+    margin-bottom:5%
+}
+.sellFormChild{
+    display:flex;
+    flex-direction: column;
+    width:45%
+}
+.sellFormChild label{
+    margin-bottom:3%
+}
+.sellFormChild input{
+    height:40px;
+    padding-left: 3%;
+    background-color: #12232E;
+    color:white
+}
+.sellFormChild select{
+    height:40px;
+    padding-left: 3%;
+    background-color: #12232E;
+    color:white
+}
+.sellBtn{
+    width:50%;
+    background-color:#007CC7 ;
+    margin-left: 25%;
+    display:flex;
+    align-items: center;
+    height:40px;
+    justify-content: center;
+    color:white;
+}
