@@ -1,15 +1,15 @@
-import Data from '../../data.js'
-import './card.css'
+import './cmpCard.css'
 import { FaCalendarAlt } from "react-icons/fa";
 import { TbSteeringWheel } from "react-icons/tb";
 import { RiGasStationLine } from "react-icons/ri";
 import { RiParentLine } from "react-icons/ri";
 import Star from '../../component/star/star.jsx'
-const Card = ({car}) => { 
+const CmpCard = ({car}) => { 
+    if(!car) return null
     return <>
         <div className="cardContainer">
-            {Data.map((car) => (
-                <div key={car.id} className="card">
+           
+                <div key={car.id} className="cardCmp">
                     <img src={car.image} alt={car.name}/>
                     <div className="new">
                         <p>{car.state}</p>
@@ -43,8 +43,7 @@ const Card = ({car}) => {
                         <p>(12 Reviews)</p>
                     </div>
                 </div>
-            ))}
         </div>
     </>
 }
-export default Card
+export default CmpCard

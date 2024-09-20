@@ -4,18 +4,18 @@
     justify-content: space-between;
     padding-bottom:2%;
 }
-.card{
+.cardCmp{
     border: 2px solid #12232E;
-    width:30%;
+    width:100%;
 }
-.card img{
+.cardCmp img{
     width:90%;
     padding:5%
 }
-.card h2{
+.cardCmp h2{
     padding-left:5%
 }
-.card p{
+.cardCmp p{
     padding-left:5%
 }
 .yearStyle{

@@ -12,20 +12,12 @@ const ImgChange = () => {
             prevIndex === images.length - 1 ? 0 : prevIndex + 1
           );
         }, 2000);
-        return () => clearInterval(intervalId); // Dọn dẹp interval khi component unmount
+        return () => clearInterval(intervalId); 
   }, []);
   return (
     <div className="slider">
       <img src={images[currentIndex]} alt="Car" className="sliderImg" style={{width:'100%',height:'600px'}} />
       <div className="sliderIndicator">
-        {images.map((_, index) => (
-          <span
-            key={index}
-            className={`indicator-dot ${
-              index === currentIndex ? "active" : ""
-            }`}
-          ></span>
-        ))}
         <div className="find">
           <h1>Find your dream car</h1>
           <p>Lorem ipsum dolor sit amet,

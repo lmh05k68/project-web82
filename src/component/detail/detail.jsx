@@ -6,13 +6,47 @@ import {useParams,Link} from 'react-router-dom'
 import { FaPhone, FaEnvelope } from 'react-icons/fa';
 import Up from '../up/up.jsx'
 import Star from '../star/star.jsx'
-const Detail = ({data}) => {
+import React, { useState,useEffect,useRef } from 'react';
+const Detail = () => {
     const { id } = useParams();
     const car = Data.find(car => car.id === parseInt(id));
     if (!car) {
         return <div>Car not found</div>;
     }
     const months = Array.from({ length: 12 }, (_, i) => i + 1);
+    const [price, setPrice] = useState(56690);  // Tổng giá xe
+    const [rate, setRate] = useState(12);       // Lãi suất trả góp (%)
+    const [down, setDown] = useState(24480);    // Tiền trả trước
+    const [month, setMonth] = useState(12);     // Thời hạn trả góp (tháng)
+    const [monthlyPayment, setMonthlyPayment] = useState(0); // Số tiền trả hàng tháng
+    const calculateMonthlyPayment = () => {
+        if (price && rate && down && month) {
+            const principal = price - down; // Số tiền phải vay sau khi trừ tiền trả trước
+            const interestRate = rate / 100; // Chuyển lãi suất sang dạng thập phân
+            const totalCost = principal * (1 + interestRate); // Tổng số tiền phải trả
+            const monthly = totalCost / month; // Tính tiền trả hàng tháng
+            setMonthlyPayment(monthly.toFixed(2)); // Cập nhật kết quả
+        } else {
+            setMonthlyPayment(null); // Nếu thiếu dữ liệu, trả về null
+        }
+    };
+    useEffect(() => {
+        calculateMonthlyPayment();
+    }, [price, rate, down, month]);
+    const contactRef = useRef(null);  // Tạo ref cho form contact
+
+    const handlePriceClick = () => {
+        // Cuộn trang mượt mà đến form contact
+        contactRef.current.scrollIntoView({ behavior: 'smooth' });
+        
+        // Thêm class để nháy màu trắng
+        contactRef.current.classList.add('flash');
+        
+        // Sau 1 giây thì xóa class flash
+        setTimeout(() => {
+            contactRef.current.classList.remove('flash');
+        }, 1000);
+    };
     return <>
         <div className="newHeader">
             <Header></Header>
@@ -61,7 +95,7 @@ const Detail = ({data}) => {
                             </div>
                         </div>
                     </div>
-                    <div className="detailContact">
+                    <div className="detailContact" ref={contactRef}>
                         <h3>Contact</h3>
                         <form className="contactForm">
                             <div className="nameEmail">
@@ -101,7 +135,7 @@ const Detail = ({data}) => {
                     </div>
                 </div>
                 <div className="rightColumnContainer">
-                    <div className="rightColumnPrice"><h3>{car.price}</h3></div>
+                    <div className="rightColumnPrice" onClick={handlePriceClick}><h3>{car.price}</h3></div>
                     <div className="rightColumn">
                         <div className="rightDetail">
                             <h3>Car Details</h3>
@@ -186,17 +220,17 @@ const Detail = ({data}) => {
                             <div className="priceRate">
                                 <div className="priceTotal">
                                     <label htmlFor="price">Price</label>
-                                    <input type="text" id="price" placeholder="$56,690"></input>
+                                    <input type="text" id="price" placeholder="$56,690" value={price} onChange={(e) => setPrice(Number(e.target.value.replace(/[^0-9.-]+/g, "")))}></input>
                                 </div>
                                 <div className="priceTotal">
                                     <label htmlFor="rate">Interest Rate (%)</label>
-                                    <input type="text" id="rate" placeholder="12%"></input>
+                                    <input type="text" id="rate" placeholder="12%" value={rate} onChange={(e) => setRate(Number(e.target.value))}></input>
                                 </div>
                             </div>
                             <div className="monthDown">
                                 <div className="priceTotal">
                                     <label htmlFor="month">Period in months</label>
-                                    <select id="month">
+                                    <select id="month" value={month} onChange={(e) => setMonth(Number(e.target.value))}>
                                         {months.map(month => (
                                             <option key={month} value={month}>
                                                 {month} Months
@@ -206,7 +240,7 @@ const Detail = ({data}) => {
                                 </div>
                                 <div className="priceTotal">
                                     <label htmlFor="down">Down Payment</label>
-                                    <input type="text" id="down" placeholder="$24,480"></input>
+                                    <input type="text" id="down" placeholder="$24,480"  value={down} onChange={(e) => setDown(Number(e.target.value.replace(/[^0-9.-]+/g, "")))}></input>
                                 </div>
                             </div>
                         </div>
@@ -216,7 +250,7 @@ const Detail = ({data}) => {
                                 <div className="detailLine1"></div>
                                 <div className="detailLine2"></div>
                             </div>
-                            <h1 style={{color:"#007CC7"}}>$2,878</h1>
+                            <h1 style={{color:"#007CC7"}}>{monthlyPayment === null ? "$0" : `$${monthlyPayment}`}</h1>
                         </div>
                     </div>
                 </div>

@@ -241,7 +241,8 @@
     justify-content: center;
     align-items:center;
     color:#007CC7;
-    margin-bottom:15%
+    margin-bottom:15%;
+    cursor:pointer
 }
 .rightColumn{
     background-color:  #071620;
@@ -273,4 +274,9 @@
     background-color:#071620 ;
     color:white;
     margin-top: 15%;
+}
+.flash {
+    background-color: white; /* Nháy màu trắng */
+    color: black; /* Đổi màu chữ trong khi nháy */
+    transition: background-color 0.3s ease;
 }
