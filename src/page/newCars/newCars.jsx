@@ -9,8 +9,10 @@ const NewCars = () => {
     return<>
     <div className="newHeader">
         <Header></Header>
-        <h1>New Cars</h1>
-        <p>Homepage - New Cars</p>
+        <div className="newHeaderh1">
+            <h1>New Cars</h1>
+            <p>Homepage - New Cars</p>
+        </div>
     </div>
     <div className="newBody">
         <Filter></Filter>

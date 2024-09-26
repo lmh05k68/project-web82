@@ -1,50 +1,60 @@
-import {Link, useNavigate} from 'react-router-dom'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faEnvelope,faLock,faEye, faEyeSlash} from '@fortawesome/free-solid-svg-icons';
 import React, { useState } from 'react';
 import axios from 'axios';
 
-const Login = () => {
+const Register = () => {
   const [formData, setFormData] = useState({
+    name: '',
     email: '',
     password: ''
   });
 
   const [response, setResponse] = useState({
     message: '',
-    success: null,
-    token: ''
+    success: null
   });
+
+  // Hàm xử lý khi người dùng thay đổi thông tin trên form
   const handleChange = (e) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
     });
   };
+
+  // Hàm xử lý khi người dùng nhấn vào nút "Đăng Ký"
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('http://localhost:4000/api/user/login', formData);  // URL API đăng nhập của bạn
+      const res = await axios.post('http://localhost:4000/api/user/register', formData);  // URL API của bạn
       setResponse({
         message: res.data.message,
-        success: true,
-        token: res.data.data // Lưu token sau khi đăng nhập thành công
+        success: res.data.success
       });
-      setFormData({ email: '', password: '' });
-      localStorage.setItem('token', res.data.data); // Lưu token vào localStorage để sử dụng cho các request sau
+      if (res.data.success) {
+        setFormData({ name: '', email: '', password: '' });
+      }
     } catch (error) {
       setResponse({
         message: error.response?.data?.message || "Something went wrong!",
-        success: false,
-        token: ''
+        success: false
       });
     }
   };
 
   return (
-    <div className="login-container">
-      <h1>Đăng Nhập</h1>
+    <div className="register-container">
+      <h1>Đăng Ký</h1>
       <form onSubmit={handleSubmit}>
+        <div>
+          <label>Tên:</label>
+          <input 
+            type="text" 
+            name="name" 
+            value={formData.name} 
+            onChange={handleChange} 
+            required 
+          />
+        </div>
         <div>
           <label>Email:</label>
           <input 
@@ -65,7 +75,7 @@ const Login = () => {
             required 
           />
         </div>
-        <button type="submit">Đăng Nhập</button>
+        <button type="submit">Đăng Ký</button>
       </form>
       {response.success !== null && (
         <div className={response.success ? "success-message" : "error-message"}>
@@ -76,4 +86,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;

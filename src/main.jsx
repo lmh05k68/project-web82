@@ -8,6 +8,8 @@ import UsedCars from './page/usedCars/usedCars.jsx'
 import Detail from './component/detail/detail.jsx'
 import Cmp from './page/compare page/cmp.jsx'
 import Sell from './component/sell/sell.jsx'
+import Login from './page/login/login.jsx'
+import Register from './page/login/register.jsx'
 createRoot(document.getElementById('root')).render(
   <Router>
     <Routes>
@@ -17,6 +19,8 @@ createRoot(document.getElementById('root')).render(
       <Route path="/car/:id" element={<Detail/>}/>
       <Route path="/cmp" element={<Cmp/>}/>
       <Route path ="/sell" element={<Sell/>}/>
+      <Route path="/login" element={<Login/>}/>
+      <Route path="/register" element={<Register/>}/>
     </Routes>
   </Router>
 )
