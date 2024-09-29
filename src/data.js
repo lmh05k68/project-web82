@@ -30,7 +30,9 @@ const Data = [
         width:"1849 mm",
         height:"1443 mm",
         cargoVolume:"542 L",
-        features:["Autopilot","Summon","Autopark","Auto Lane Change","15 inch Touchscreen Display","360 Camera","12 Ultrasonic Sensor"]
+        features:["Autopilot","Summon","Autopark","Auto Lane Change","15 inch Touchscreen Display","360 Camera","12 Ultrasonic Sensor"],
+        purchases: 150,
+        likes: 250
     },
     {
         id: 2,
@@ -66,7 +68,10 @@ const Data = [
             "Trailer Sway Control",
             "Off-Road Package with Skid Plates",
             "Advanced Security Pack with SecuriLock"
-          ]
+        ],
+        purchases: 54800, 
+        likes: 40686,
+        rate:3.6
     },
     {
         id: 3,
@@ -103,7 +108,10 @@ const Data = [
             "Satellite-Linked Navigation System",
             "Multi-Angle Rearview Camera",
             "Front and Rear Parking Sensors"
-          ]
+        ],
+        purchases: 59726, 
+        likes: 9994,
+        rate:5.0
     },
     {
         id: 4,
@@ -139,7 +147,10 @@ const Data = [
             "LED Daytime Running Lamps",
             "4G LTE Wi-Fi Hotspot Capable",
             "Chevy Safety Assist Package"
-          ]
+        ],
+        purchases: 130756, 
+        likes: 62124,
+        rate:2.2
     },
     {
         id: 5,
@@ -173,7 +184,10 @@ const Data = [
             "Forward Collision-Avoidance Assist",
             "Lane Keeping Assist",
             "Safe Exit Assist"
-          ]
+        ],
+        purchases: 112729, 
+        likes: 79813,
+        rate:1.7
     },
     {
         id: 6,
@@ -207,7 +221,10 @@ const Data = [
             "Rain-Sensing Windshield Wipers",
             "Dynamic Stability Control",
             "Mini Driving Modes",
-          ]
+        ],
+        purchases: 16338, 
+        likes: 8298,
+        rate:2.8
     },
     {
         id: 7,
@@ -242,7 +259,10 @@ const Data = [
             "All-Weather Floor Mats",
             "ParkView Rear Back-Up Camera",
             "Skid Plates for Fuel Tank and Transfer Case"
-          ]
+        ],
+        purchases: 8572, 
+        likes: 5656,
+        rate:4.9
     },
     {
         id: 8,
@@ -279,7 +299,10 @@ const Data = [
             "Panoramic Glass Sunroof",
             "Heated and Ventilated Front Seats",
             "Leather Upholstery"
-          ]
+        ],
+        purchases: 64340, 
+        likes: 15099,
+        rate:3.7
     },
     {
         id: 9,
@@ -315,7 +338,10 @@ const Data = [
             "Dual-Zone Climate Control",
             "Rear Traffic Monitor",
             "Park Assist with Front and Rear Sensors"
-        ]
+        ],
+        purchases: 132839, 
+        likes: 26059,
+        rate:2.0
 },
     {
         id: 10,
@@ -350,7 +376,10 @@ const Data = [
             "Dual-Zone Automatic Climate Control",
             "Adaptive Cruise Control",
             "Lane Departure Warning with Lane Tracing Assist",
-        ]
+        ],
+        purchases: 122693, 
+        likes: 87408,
+        rate:4.9
     },
 ] 
 export default Data  

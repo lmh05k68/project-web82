@@ -1,0 +1,40 @@
+.register-container{
+    position:absolute;
+    width:100%;
+    top:35%;
+    display:flex;
+    margin-left:32%;
+}
+.register-container button{
+    width:200%;
+    height:40px;
+    margin-top:10%;
+    background-color: #007CC7;
+    color:white;
+    margin-bottom: 5%;
+}
+.login-form{
+    margin-bottom:15%;
+    display:flex;
+    flex-direction: column;
+    width:200%;
+}
+.login-form label{
+    margin-bottom:2%
+}
+.login-form input{
+    height:40px;
+    padding-left:5%;
+    background-color: #152836;
+    color:white
+}
+.to-login{
+    display:flex;
+    justify-content: space-between;
+    width:200%;
+}
+.password-toggle-icon{
+    position:absolute;
+    top:61%;
+    right:67%
+}

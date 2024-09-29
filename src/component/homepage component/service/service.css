@@ -12,6 +12,7 @@
     display:flex;
     width:100%;
     justify-content: space-between;
+    text-decoration: none;
 }
 .serviceChild{
     border:1px solid #004A77;

@@ -4,12 +4,13 @@ import { TbSteeringWheel } from "react-icons/tb";
 import { RiGasStationLine } from "react-icons/ri";
 import { RiParentLine } from "react-icons/ri";
 import Star from '../../component/star/star.jsx'
+import {Link} from 'react-router-dom'
 const CmpCard = ({car}) => { 
     if(!car) return null
     return <>
         <div className="cardContainer">
            
-                <div key={car.id} className="cardCmp">
+                <Link to={`/car/${car.id}`} key={car.id} className="cardCmp">
                     <img src={car.image} alt={car.name}/>
                     <div className="new">
                         <p>{car.state}</p>
@@ -42,7 +43,7 @@ const CmpCard = ({car}) => {
                         <Star></Star>
                         <p>(12 Reviews)</p>
                     </div>
-                </div>
+                </Link>
         </div>
     </>
 }

@@ -5,14 +5,15 @@ import { TbSteeringWheel } from "react-icons/tb";
 import { RiGasStationLine } from "react-icons/ri";
 import { RiParentLine } from "react-icons/ri";
 import Star from '../../component/star/star.jsx'
-const RecommendCard = () => { 
+import {Link} from 'react-router-dom'
+const RecommendCard = ({cars}) => { 
     return <>
         <div className="cardContainer">
-            {Data.slice(0,3).map((car) => (
-                <div key={car.id} className="card">
+            {cars.map((car) => (
+                <Link to={`/car/${car.id}`}div key={car.id} className="card">
                     <img src={car.image} alt={car.name}/>
                     <div className="new">
-                        <p>{car.state}</p>
+                        <p style={{textDecoration:"none"}}>{car.state}</p>
                     </div>
                     <h2 style={{paddingTop:"10px"}} className="carName">{car.name}</h2>
                     <h2 style={{color:"#007CC7",paddingTop:'2%'}}>{car.price}</h2>
@@ -42,7 +43,7 @@ const RecommendCard = () => {
                         <Star></Star>
                         <p>(12 Reviews)</p>
                     </div>
-                </div>
+                </Link>
             ))}
         </div>
     </>

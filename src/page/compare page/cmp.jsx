@@ -38,6 +38,38 @@ const Cmp = () => {
     setSelectedCar2(null);
     setBetterCar(null);
   };
+  const comparisonTable = () => {
+    if (!selectedCar1 || !selectedCar2) return null;
+
+    const comparisonCriteria = [
+      { label: "Price", car1Value: selectedCar1.price, car2Value: selectedCar2.price },
+      { label: "Year", car1Value: selectedCar1.year, car2Value: selectedCar2.year },
+      { label: "Power", car1Value: selectedCar1.power, car2Value: selectedCar2.power },
+      { label: "Mileage", car1Value: selectedCar1.mileage, car2Value: selectedCar2.mileage },
+      { label: "Cargo Volume", car1Value: selectedCar1.cargoVolume, car2Value: selectedCar2.cargoVolume }
+    ];
+
+    return (
+      <table className="comparisonTable">
+        <thead>
+          <tr>
+            <th>Criteria</th>
+            <th>{selectedCar1.name}</th>
+            <th>{selectedCar2.name}</th>
+          </tr>
+        </thead>
+        <tbody >
+          {comparisonCriteria.map((criteria, index) => (
+            <tr key={index}>
+              <td>{criteria.label}</td>
+              <td>{criteria.car1Value}</td>
+              <td>{criteria.car2Value}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    );
+  };
     return <>
     <div className="newHeader">
         <Header></Header>
@@ -78,8 +110,13 @@ const Cmp = () => {
     </div>
       {betterCar && (
         <div className="better">
-          <h2>Better Car</h2>
-          <CmpCard car={betterCar}/>
+          <h2 style={{marginLeft:"10%"}}>Better Car</h2>
+          <div className="table-card">
+            <div className="better-card">
+              <CmpCard car={betterCar}/>
+            </div>
+            {comparisonTable()}
+          </div>
         </div>
       )}
     <Footer></Footer>

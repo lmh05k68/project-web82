@@ -1,89 +1,73 @@
+// src/pages/Register.js
 import React, { useState } from 'react';
 import axios from 'axios';
+import Header from '../../component/header/header.jsx';
+import Footer from '../../component/footer/footer.jsx';
+import { Link } from 'react-router-dom';
+import './register.css';
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 const Register = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    password: ''
-  });
+    const [formData, setFormData] = useState({ name: '', email: '', password: '' });
+    const [showPassword, setShowPassword] = useState(false);
 
-  const [response, setResponse] = useState({
-    message: '',
-    success: null
-  });
+    const handleChange = (e) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
 
-  // Hàm xử lý khi người dùng thay đổi thông tin trên form
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            const res = await axios.post('http://localhost:4000/api/user/register', formData); // URL API của bạn
+            if (res.data.success) {
+                alert('Đăng ký thành công!');
+                setFormData({ name: '', email: '', password: '' });
+            } else {
+                alert(`Đăng ký thất bại: ${res.data.message}`);
+            }
+        } catch (error) {
+            alert(`Đăng ký thất bại: ${error.response?.data?.message || "Something went wrong!"}`);
+        }
+    };
 
-  // Hàm xử lý khi người dùng nhấn vào nút "Đăng Ký"
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const res = await axios.post('http://localhost:4000/api/user/register', formData);  // URL API của bạn
-      setResponse({
-        message: res.data.message,
-        success: res.data.success
-      });
-      if (res.data.success) {
-        setFormData({ name: '', email: '', password: '' });
-      }
-    } catch (error) {
-      setResponse({
-        message: error.response?.data?.message || "Something went wrong!",
-        success: false
-      });
-    }
-  };
+    const togglePasswordVisibility = () => {
+        setShowPassword(!showPassword);
+    };
 
-  return (
-    <div className="register-container">
-      <h1>Đăng Ký</h1>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>Tên:</label>
-          <input 
-            type="text" 
-            name="name" 
-            value={formData.name} 
-            onChange={handleChange} 
-            required 
-          />
-        </div>
-        <div>
-          <label>Email:</label>
-          <input 
-            type="email" 
-            name="email" 
-            value={formData.email} 
-            onChange={handleChange} 
-            required 
-          />
-        </div>
-        <div>
-          <label>Password:</label>
-          <input 
-            type="password" 
-            name="password" 
-            value={formData.password} 
-            onChange={handleChange} 
-            required 
-          />
-        </div>
-        <button type="submit">Đăng Ký</button>
-      </form>
-      {response.success !== null && (
-        <div className={response.success ? "success-message" : "error-message"}>
-          {response.message}
-        </div>
-      )}
-    </div>
-  );
+    return (
+        <>
+            <div className="newHeader">
+                <Header />
+                <h1>Register</h1>
+            </div>
+            <img src="/Rectangle 108.png" style={{ position: "relative", marginBottom: "1%" }} alt="Register Banner" />
+            <div className="register-container">
+                <form onSubmit={handleSubmit}>
+                    <div className="login-form">
+                        <label>Tên:</label>
+                        <input type="text" name="name" value={formData.name} onChange={handleChange} required />
+                    </div>
+                    <div className="login-form">
+                        <label>Email:</label>
+                        <input type="email" name="email" value={formData.email} onChange={handleChange} required />
+                    </div>
+                    <div className="login-form">
+                        <label>Password:</label>
+                        <input type={showPassword ? "text" : "password"} name="password" value={formData.password} onChange={handleChange} required />
+                        <span className="password-toggle-icon" onClick={togglePasswordVisibility}>
+                            {showPassword ? <FaEyeSlash /> : <FaEye />}
+                        </span>
+                    </div>
+                    <button type="submit">Đăng Ký</button>
+                    <div className="to-login">
+                        <p>Already have an account?</p>
+                        <Link to="/login" style={{ color: "#007CC7", textDecoration: "none" }}><p>Login here</p></Link>
+                    </div>
+                </form>
+            </div>
+            <Footer />
+        </>
+    );
 };
 
 export default Register;

@@ -1,6 +1,7 @@
 .cmpCardContainer{
     width:100%;
-    margin-top:10%
+    margin-top:10%;
+
 }
 .twoCard{
     display:flex;
@@ -34,10 +35,28 @@
     color:white
 }
 .better{
-    width:30%;
-    margin-left:35%;
+    width:100%;
     margin-bottom: 5%;
 }
 .better h2{
-    margin-bottom:3%
+    margin-bottom:3%;
+}
+.table-card{
+    display:flex;
+    width:100%;
+    justify-content: space-around;
+}
+.better-card{
+    width:30%
+}
+.comparisonTable{
+    width:50%;
+    background-color: #152836;
+    border-collapse: collapse;
+}
+.comparisonTable th,
+.comparisonTable td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
 }

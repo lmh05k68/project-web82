@@ -1,0 +1,10 @@
+.closeButton{
+    cursor:pointer;
+    font-size: 30px;
+}
+.closeButton:hover{
+    background-color: red;
+}
+.modalOverlay{
+    width:30%;
+}
