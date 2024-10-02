@@ -73,8 +73,10 @@ const Cmp = () => {
     return <>
     <div className="newHeader">
         <Header></Header>
-        <h1>Compare Cars</h1>
-        <p>Homepage - Compare</p>
+        <div className="newHeaderh1">
+            <h1>Compare Cars</h1>
+            <p>Homepage - Compare Cars</p>
+        </div>
     </div>
     <div className="cmpCardContainer">
       <div className="twoCard">

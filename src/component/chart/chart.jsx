@@ -5,7 +5,9 @@ import Header from '../header/header.jsx';
 import Footer from '../footer/footer.jsx';
 
 const CarChart = () => {
-  const chartRef = useRef(null);
+  const likesPurchasesRef = useRef(null);
+  const rateRef = useRef(null);
+  
   Chart.register(BarController, BarElement, CategoryScale, LinearScale, Title, Tooltip, Legend);
 
   // Chuẩn bị dữ liệu cho biểu đồ từ mảng Data
@@ -15,34 +17,61 @@ const CarChart = () => {
   const carRates = Data.map(car => car.rate || 0); // Lấy rating, mặc định 0 nếu không có
 
   useEffect(() => {
-    const ctx = chartRef.current.getContext('2d');
-
-    const carChart = new Chart(ctx, {
-      type: 'bar', // Chọn loại biểu đồ
+    // Biểu đồ cho Likes và Purchases
+    const ctx1 = likesPurchasesRef.current.getContext('2d');
+    const likesPurchasesChart = new Chart(ctx1, {
+      type: 'bar',
       data: {
-        labels: carNames, // Gán nhãn cho trục X là tên các xe
+        labels: carNames,
         datasets: [
           {
-            label: 'Likes', // Nhãn cho số lượt thích
-            data: carLikes, // Gán dữ liệu là số lượt thích từ Data
-            backgroundColor: 'rgba(75, 192, 192, 0.5)', // Màu nền cho cột biểu đồ
-            borderColor: 'rgba(75, 192, 192, 1)', // Màu viền cho cột biểu đồ
+            label: 'Likes',
+            data: carLikes,
+            backgroundColor: 'rgba(75, 192, 192, 0.5)',
+            borderColor: 'rgba(75, 192, 192, 1)',
             borderWidth: 1,
           },
           {
-            label: 'Purchases', // Nhãn cho số lượt mua
-            data: carSales, // Gán dữ liệu là số lượt mua từ Data
-            backgroundColor: 'rgba(54, 162, 235, 0.5)', // Màu nền cho cột biểu đồ
-            borderColor: 'rgba(54, 162, 235, 1)', // Màu viền cho cột biểu đồ
+            label: 'Purchases',
+            data: carSales,
+            backgroundColor: 'rgba(54, 162, 235, 0.5)',
+            borderColor: 'rgba(54, 162, 235, 1)',
             borderWidth: 1,
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          x: {
+            beginAtZero: true,
+            ticks: {
+              autoSkip: false,
+              maxRotation: 90,
+              minRotation: 90
+            }
           },
+          y: {
+            beginAtZero: true,
+          }
+        }
+      }
+    });
+
+    // Biểu đồ cho Rate
+    const ctx2 = rateRef.current.getContext('2d');
+    const rateChart = new Chart(ctx2, {
+      type: 'bar',
+      data: {
+        labels: carNames,
+        datasets: [
           {
-            label: 'Rate', // Nhãn cho đánh giá
-            data: carRates, // Gán dữ liệu là số rating từ Data
-            backgroundColor: 'rgba(255, 159, 64, 0.5)', // Màu nền cho cột biểu đồ
-            borderColor: 'rgba(255, 159, 64, 1)', // Màu viền cho cột biểu đồ
+            label: 'Rate',
+            data: carRates,
+            backgroundColor: 'rgba(255, 159, 64, 0.5)',
+            borderColor: 'rgba(255, 159, 64, 1)',
             borderWidth: 1,
-          },
+          }
         ]
       },
       options: {
@@ -64,18 +93,27 @@ const CarChart = () => {
     });
 
     return () => {
-      carChart.destroy(); // Hủy biểu đồ trước khi tạo lại để tránh lỗi
+      likesPurchasesChart.destroy();
+      rateChart.destroy();
     };
   }, [carNames, carLikes, carSales, carRates]);
 
   return (
     <>
       <div className="newHeader">
-        <Header />
-        <h1>Chart</h1>
-      </div>
+        <Header></Header>
+        <div className="newHeaderh1">
+            <h1>Car Chart</h1>
+            <p>Homepage - Car Chart</p>
+        </div>
+    </div>
       <div style={{ width: '80%', marginLeft: '10%', marginTop: '1%', marginBottom: '1%' }}>
-        <canvas ref={chartRef} id="carChart"></canvas>
+        <h2>Likes and Purchases Chart</h2>
+        <canvas ref={likesPurchasesRef} id="likesPurchasesChart"></canvas>
+      </div>
+      <div style={{ width: '80%', marginLeft: '10%', marginTop: '2%', marginBottom: '1%' }}>
+        <h2>Rate Chart</h2>
+        <canvas ref={rateRef} id="rateChart"></canvas>
       </div>
       <Footer />
     </>

@@ -1,23 +1,24 @@
-import React, { useState} from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
-import { Link,useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './login.css';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import Header from '../../component/header/header.jsx'
 import Footer from '../../component/footer/footer.jsx'
-import {useUserContext} from '../../component/context/UserContext.jsx'
 const Login = () => {
   const [formData, setFormData] = useState({
     email: '',
     password: ''
   });
-  const { setUser } = useUserContext();
+
   const [response, setResponse] = useState({
     success: null,
     token: ''
   });
-  const navigate = useNavigate();
+
   const [showPassword, setShowPassword] = useState(false);
+  
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setFormData({
@@ -33,13 +34,12 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('http://localhost:4000/api/user/login', formData); // URL API đăng nhập
+      const res = await axios.post('http://localhost:3000/api/user/login', formData); // URL API đăng nhập
       setResponse({
         success: true,
-        token: res.data.data // Lưu token sau khi đăng nhập thành công
+        token: res.data.data
       });
       alert(res.data.message);
-      setUser({ name: res.data.user.name });
       navigate('/');
     } catch (error) {
       setResponse({
@@ -54,8 +54,11 @@ const Login = () => {
     <>
       <div className="newHeader">
         <Header></Header>
-        <h1>Login</h1>
-      </div>
+        <div className="newHeaderh1">
+            <h1>Login</h1>
+            <p>Homepage - Login</p>
+        </div>
+        </div>
       <img src="/Rectangle 108.png" style={{ position: "relative", marginBottom: "1%" }} alt="background" />
       <div className="login-container">
         <form onSubmit={handleSubmit}>
@@ -91,6 +94,13 @@ const Login = () => {
               <p>Register here</p>
             </Link>
           </div>
+          <div className="to-register" style={{marginTop:'5%'}}>
+            <p>Forgot your password?</p>
+            <Link to="/forgot-password" style={{ color: "#007CC7", textDecoration: "none" }}>
+              <p>Reset it here</p>
+            </Link>
+          </div>
+
         </form>
       </div>
       <Footer></Footer>

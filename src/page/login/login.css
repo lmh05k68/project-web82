@@ -1,7 +1,7 @@
 .login-container{
     position:absolute;
     width:100%;
-    top:45%;
+    top:60%;
     display:flex;
     margin-left:32%;
 }
@@ -35,6 +35,6 @@
 }
 .password-icon{
     position:absolute;
-    top:48%;
+    top:43%;
     right:67%
 }

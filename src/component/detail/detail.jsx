@@ -5,7 +5,7 @@ import Data from '../../data.js'
 import {useParams,Link} from 'react-router-dom'
 import { FaPhone, FaEnvelope } from 'react-icons/fa';
 import Up from '../up/up.jsx'
-import Star from '../star/star.jsx'
+import Star from '../../page/compare page/star/star.jsx'
 import React, { useState,useEffect,useRef } from 'react';
 const Detail = () => {
     const { id } = useParams();
@@ -53,7 +53,7 @@ const Detail = () => {
             <h1>{car.name}</h1>
             <p>Homepage - Car Details</p>  
         </div>
-        <img src={car.image} alt={car.name} width="100%" height="600px" />
+        <img src={car.image} alt={car.name} width="80%" height="600px" style={{marginLeft:'10%'}} />
         <div className="detailBody">
             <div style={{display:"flex"}}>
                 <div className="leftColumn">

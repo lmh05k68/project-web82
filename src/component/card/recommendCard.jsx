@@ -4,7 +4,7 @@ import { FaCalendarAlt } from "react-icons/fa";
 import { TbSteeringWheel } from "react-icons/tb";
 import { RiGasStationLine } from "react-icons/ri";
 import { RiParentLine } from "react-icons/ri";
-import Star from '../../component/star/star.jsx'
+import Star from '../../page/compare page/star/star.jsx'
 import {Link} from 'react-router-dom'
 const RecommendCard = ({cars}) => { 
     return <>

@@ -31,8 +31,9 @@ const Data = [
         height:"1443 mm",
         cargoVolume:"542 L",
         features:["Autopilot","Summon","Autopark","Auto Lane Change","15 inch Touchscreen Display","360 Camera","12 Ultrasonic Sensor"],
-        purchases: 150,
-        likes: 250
+        purchases: 126234,
+        likes: 39458,
+        rate:5.0
     },
     {
         id: 2,

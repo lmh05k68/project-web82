@@ -8,15 +8,17 @@ dotenv.config();
 
 //App config
 const app = express();
-const port = process.env.PORT ||4000
+const port = process.env.PORT ||3000
 connectDB();
 connectCloudinary
 
 //middlewares
 app.use(express.json());
-app.use(cors());
-
-
+app.use(cors({
+    origin: '*', // Cho phép mọi nguồn truy cập. Nếu cần bảo mật, cấu hình cụ thể URL frontend.
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization']
+  }));
 //api endpoints
 
 app.use('/api/user',userRouter);

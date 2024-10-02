@@ -4,10 +4,12 @@ import './sell.css'
 const Sell = () => {
     return <>
         <div className="newHeader">
-            <Header></Header>
+        <Header></Header>
+        <div className="newHeaderh1">
             <h1>Sell Cars</h1>
             <p>Homepage - Sell Cars</p>
         </div>
+    </div>
         <div className="sell">
             <img src="Rectangle 108.png" style={{position:"relative"}} width="100%"></img>
             <div className="sellForm">

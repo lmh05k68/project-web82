@@ -18,7 +18,7 @@ const Register = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const res = await axios.post('http://localhost:4000/api/user/register', formData); // URL API của bạn
+            const res = await axios.post('http://localhost:3000/api/user/register', formData); // URL API của bạn
             if (res.data.success) {
                 alert('Đăng ký thành công!');
                 setFormData({ name: '', email: '', password: '' });
@@ -37,14 +37,17 @@ const Register = () => {
     return (
         <>
             <div className="newHeader">
-                <Header />
-                <h1>Register</h1>
-            </div>
+        <Header></Header>
+        <div className="newHeaderh1">
+            <h1>Register</h1>
+            <p>Homepage - Register</p>
+        </div>
+    </div>
             <img src="/Rectangle 108.png" style={{ position: "relative", marginBottom: "1%" }} alt="Register Banner" />
             <div className="register-container">
                 <form onSubmit={handleSubmit}>
                     <div className="login-form">
-                        <label>Tên:</label>
+                        <label>Name:</label>
                         <input type="text" name="name" value={formData.name} onChange={handleChange} required />
                     </div>
                     <div className="login-form">
